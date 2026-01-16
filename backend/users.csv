@@ -1,11 +1,11 @@
-username,password,full_name,alias,role,availability,languages,mentorship_options,interests
-alex_t,Ax9!mentor,Alex Thompson,AT_mentor,mentor,weekly,"english,spanish,russian",career,"fitness,reading,travel"
-sof_mart,S0f!learn,Sofia Martinez,sof_m,mentee,bi weekly,"spanish,arabic,russian","academic,career","writing,reading,coffee"
-hassan_a,Ha$2024,Hassan Ali,h_ali,both,monthly,"arabic,mandarin,portuguese","career,personal","entrepreneurship,travel,technology"
-claire_d,Cl@ire92,Claire Dubois,cld_92,mentor,weekly,"french,hindi,arabic","academic,career","photography,design,travel"
-rahul_v,RvC0de!,Rahul Verma,rv_code,mentee,weekly,"hindi,english,spanish",career,"side projects,gaming,technology"
-mei_l,Mei#Connect,Mei Lin,mei_connect,mentor,bi weekly,"mandarin,french,english","academic,career","teaching,reading,creative writing"
-daniel_p,Dp!growth,Daniel Pereira,dpereira,both,monthly,"portuguese,bengali,hindi","career,personal","fitness,cooking,travel"
-amina_k,Ami@2025,Amina Khan,amina_k,mentee,weekly,"urdu,portuguese,english","academic,personal","journaling,reading,self improvement"
-ivan_p,IpDev#7,Ivan Petrov,ip_dev,mentor,monthly,"russian,spanish,bengali",career,"programming,gaming,side projects"
-nadia_r,Nadia!BR,Nadia Rahman,nadia_r,both,bi weekly,"bengali,mandarin,portuguese","career,personal","public speaking,writing,mentoring"
+username,password,full_name,alias,role,availability,languages,mentorship_options,interests, 1:1
+alex_t,Ax9!mentor,Alex Thompson,AT_mentor,mentor,weekly,"english,spanish,russian",career,"fitness,reading,travel", true
+sof_mart,S0f!learn,Sofia Martinez,sof_m,mentee,bi weekly,"spanish,arabic,russian","academic,career","writing,reading,coffee", true
+hassan_a,Ha$2024,Hassan Ali,h_ali,both,monthly,"arabic,mandarin,portuguese","career,personal","entrepreneurship,travel,technology", false
+claire_d,Cl@ire92,Claire Dubois,cld_92,mentor,weekly,"french,hindi,arabic","academic,career","photography,design,travel", true
+rahul_v,RvC0de!,Rahul Verma,rv_code,mentee,weekly,"hindi,english,spanish",career,"side projects,gaming,technology", false
+mei_l,Mei#Connect,Mei Lin,mei_connect,mentor,bi weekly,"mandarin,french,english","academic,career","teaching,reading,creative writing", true
+daniel_p,Dp!growth,Daniel Pereira,dpereira,both,monthly,"portuguese,bengali,hindi","career,personal","fitness,cooking,travel", false
+amina_k,Ami@2025,Amina Khan,amina_k,mentee,weekly,"urdu,portuguese,english","academic,personal","journaling,reading,self improvement", false
+ivan_p,IpDev#7,Ivan Petrov,ip_dev,mentor,monthly,"russian,spanish,bengali",career,"programming,gaming,side projects", true
+nadia_r,Nadia!BR,Nadia Rahman,nadia_r,both,bi weekly,"bengali,mandarin,portuguese","career,personal","public speaking,writing,mentoring", false
