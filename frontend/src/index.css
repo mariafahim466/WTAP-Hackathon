@@ -1,68 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  font-family: 'Quicksand', sans-serif;
+  --text-color: #5d5c61; /* Softer dark grey/brown */
+  --bg-beige: #fdfbf7;   /* Very light cream */
+  --accent-blue: #b8e1ff;
+  --accent-green: #b5ead7;
+  --accent-pink: #ffdac1;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  box-sizing: border-box;
   min-height: 100vh;
+  width: 100%;
+  
+  /* The Beige aesthetic gradient */
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); 
+  /* Or a warmer beige option below if you prefer: */
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); /* This is a bit cool, let's fix it below */
+  background: #fdfbf7; /* Solid aesthetic beige base */
+  background-image: radial-gradient(#d4e09b 1px, transparent 1px), radial-gradient(#d4e09b 1px, #fdfbf7 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  
+  color: var(--text-color);
+
+  /* Flexbox Centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#root {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+/* Global Bubble Styles */
+button, input, select, textarea {
+  font-family: 'Quicksand', sans-serif;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
 }
+
 button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  filter: brightness(1.05); /* Slight glow */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+input, select, textarea {
+  background-color: #ffffff; /* Clean white inputs */
+  border: 1px solid #e0e0e0;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #b5ead7; /* Sage Green focus */
+  box-shadow: 0 0 0 4px rgba(181, 234, 215, 0.4);
 }
