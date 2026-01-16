@@ -1,0 +1,6 @@
+# --- Python Ignores ---
+backend/venv/
+backend/__pycache__/
+*.pyc
+
+# --- Node/React Ignores ---
