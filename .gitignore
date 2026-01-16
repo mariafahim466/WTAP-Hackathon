@@ -2,5 +2,12 @@
 backend/venv/
 backend/__pycache__/
 *.pyc
+*.pyo
+pylintrc
+.env
 
 # --- Node/React Ignores ---
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/coverage/
