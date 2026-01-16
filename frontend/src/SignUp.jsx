@@ -25,20 +25,42 @@ function SignUp() {
     setFormData(prev => ({ ...prev, [name]: selected }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setEmailStatus("Validating...");
-    try {
-      const response = await axios.post('http://127.0.0.1:8000/api/validate', { email: formData.email });
-      if (response.data.valid) {
-        setEmailStatus("✅ Valid Work Email!");
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    setEmailStatus("Validating...");
+
+    try {
+      // 1. URL UPDATED: Flask runs on port 5000 by default, and your route is just '/validate'
+      const response = await axios.post('http://127.0.0.1:5000/validate', { 
+        email: formData.email 
+      });
+      
+      if (response.data.valid) {
+        setEmailStatus("✅ Valid!");
+        
+        // Navigate based on role
+        if (formData.role === 'mentee') {
+          navigate('/mentee-details', { state: formData });
+        } else if (formData.role === 'mentor') {
+          navigate('/mentor-details', { state: formData });
+        } else if (formData.role === 'both') {
+          navigate('/mentee-details', { state: formData });
+        }
+      } else {
+        // 2. VARIABLE UPDATED: Your Python code returns "message", not "reason"
+        setEmailStatus(`❌ ${response.data.message}`);
+      }
+    } catch (error) {
+      // 3. ERROR HANDLING: If Flask returns a 400 (Bad Request), Axios throws an error.
+      // We need to check if the server sent a specific error message.
+      if (error.response && error.response.data) {
+          // Use 'error' or 'message' depending on what your Python 400 block sends
+          setEmailStatus(`❌ ${error.response.data.error || "Invalid Request"}`);
       } else {
-        setEmailStatus(`❌ ${response.data.reason}`);
+          setEmailStatus("❌ Connection Error: Is Flask running?");
       }
-    } catch (error) {
-      setEmailStatus("❌ Server Error");
-    }
-  };
+    }
+  };
 
   // --- STYLES ---
   const containerStyle = {
@@ -146,7 +168,7 @@ function SignUp() {
         <label style={labelStyle}>Goals</label>
         <textarea name="goals" style={{ ...inputStyle, borderRadius: '20px', height: '80px' }} onChange={handleChange} />
 
-        <label style={labelStyle}>Career Stage (Select Multiple)</label>
+        <label style={labelStyle}>Career Stage</label>
         <select multiple name="careerStage" style={{ ...inputStyle, borderRadius: '20px', height: '100px' }} onChange={handleMultiSelect}>
             <option value="student">🎓 Student</option>
             <option value="early">🌱 Early Career</option>
